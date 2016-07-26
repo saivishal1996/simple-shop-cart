@@ -1,0 +1,63 @@
+
+<ion-view view-title="Payment">
+  <ion-content>
+    <h1>Payment</h1>
+
+ <ion-list>
+ <form name = "myform">
+
+   <label class="item item-input"  >
+   <input type="text" placeholder="Name" name= "name" ng-model = "paymentData.name" required>
+   <span style = "color:red" ng-show = " myform.name.$invalid">
+                        <span ng-show = "myform.name.$error.required"> *</span>
+                     </span>
+   </label>
+
+   <label class="item item-input" >
+   <input type="number" min = "1000000000" max = "9999999999" placeholder="Mobile Number" name = "mobilenumber" ng-model = "paymentData.mobilenumber" required>
+   <span style = "color:red" ng-show = "myform.mobilenumber.$invalid">
+                        <span ng-show = "myform.mobilenumber.$error.required">*</span>
+                        <span ng-show = "myform.mobilenumber.$error.mobilenumber">Invalid Mobile number.</span>
+                     </span>
+   </label>
+   <label class="item item-input" >
+   <input type="text" placeholder="Address" name = "address" ng-model = "paymentData.address" required>
+<span style = "color:red" ng-show = "myform.address.$invalid">
+                        <span ng-show = "myform.address.$error.required"> *</span>
+                     </span>
+
+   </label>
+   <label class="item item-input" >
+   <input type="number" placeholder="PinCode" name = "pincode" ng-model = "paymentData.pincode" required>
+   <span style = "color:red" ng-show = "myform.pincode.$invalid">
+                        <span ng-show = "myform.pincode.$error.required"> *</span>
+
+                     </span>
+
+   </label>
+   <label class="item item-input"  >
+   <input type="email" placeholder="Email ID" name = "email" ng-model = "paymentData.email" required>
+   <span style = "color:red" ng-show = "myform.email.$invalid">
+                        <span ng-show = "myform.email.$error.required">*</span>
+                        <span ng-show = "myform.email.$error.email">Invalid email address.</span>
+                     </span>
+
+   </label>
+   
+ 
+   <p>
+  <a class="button icon icon-right ion-chevron-right" style  = "color:green" 
+  			ng-disabled = "myform.name.$invalid || 
+                        myform.mobilenumber.$invalid || 
+                        myform.address.$invalid || 
+                        myform.pincode.$invalid || 
+                        myform.email.$invalid" ng-click = "success()">Make Payment</a>
+    </p>
+
+    <p> * fields are required </p>
+ 
+ </form>
+	</ion-list>
+
+  </ion-content>
+</ion-view>

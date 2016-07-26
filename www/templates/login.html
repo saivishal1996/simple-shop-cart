@@ -1,0 +1,36 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form name = "myform2" >
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" name = "username" ng-model="loginData.username" required>
+          <span style = "color:red" ng-show = "myform2.username.$invalid">
+                        <span ng-show = "myform2.username.$error.required"> *</span>
+                        
+                     </span>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" name = "password" ng-model="loginData.password" required>
+        <span style = "color:red" ng-show = "myform2.password.$invalid">
+                        <span ng-show = "myform2.password.$error.required"> *</span>
+                        
+                     </span>
+
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" ng-disabled = "myform2.username.$invalid ||  myform2.password.$invalid" ng-click="doLogin()" >Log in</button>
+        </label>
+        <p> * fields are required </p>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+
